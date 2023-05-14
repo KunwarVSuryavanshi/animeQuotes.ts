@@ -1,9 +1,8 @@
 {
   "name": "@kunwarji/anime-quotes",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NPM package for getting quotes.",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "type": "module",
   "publishConfig": {
     "access": "public"
