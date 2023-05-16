@@ -27,19 +27,22 @@ const searchQuotes = (key: QuotesKey, value: string, limit?: number) => {
   return quotesArr.slice(0, limit < quotesArr.length && limit > 0 ? limit : quotesArr.length);
 }
 
-export const randomQuote = (limit?: number) => {
+const randomQuote = (limit?: number) => {
   if (!limit) return quotes[Math.floor(Math.random() * quotes.length)];
   return quotes.slice(0, limit < quotes.length && limit > 0 ? limit : quotes.length);
 }
 
-export const randomQuoteByAnime = (anime: string, limit?: number) => {
+const randomQuoteByAnime = (anime: string, limit?: number) => {
   const animeQuotes = searchQuotes('anime', anime, limit);
   return animeQuotes;
 }
 
-export const randomQuoteByCharacter = (character: string, limit?: number) => {
+const randomQuoteByCharacter = (character: string, limit?: number) => {
   const charQuotes = searchQuotes('name', character, limit);
   return charQuotes;
 }
 
-// console.log(randomQuote(), randomQuoteByAnime('Naruto'), randomQuoteByCharacter('Goku', 10));
+const animeQuotes = { randomQuote, randomQuoteByAnime, randomQuoteByCharacter };
+
+export default animeQuotes;
+// console.log(animeQuotes.randomQuote(), randomQuoteByAnime('Naruto'), randomQuoteByCharacter('Goku', 10));
